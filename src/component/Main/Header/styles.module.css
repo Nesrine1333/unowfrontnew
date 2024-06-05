@@ -1,0 +1,31 @@
+.header{
+    /* width:"100%";
+    object-fit:'fit';
+    padding:10px;
+    
+    margin:50px; */
+    /* position:relative;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+   
+    
+    background-color:#3e7873; */
+    width:100%;
+    border-radius:10px ;
+   
+}
+
+
+.carousel{
+  
+
+    /* position:relative;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start; */
+    width:100%;
+    padding: 50px;
+   
+    background-color:#3e467800;
+}

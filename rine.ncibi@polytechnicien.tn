@@ -1,0 +1,302 @@
+[33mcommit 9113112a0fdf15ebcc9c4c52c5ce04205b029f0a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: nesrine.ncibi@polytechnicien.tn <169178002+TomIA24@users.noreply.github.com>
+Date:   Tue Jun 4 17:05:45 2024 +0100
+
+    first commit
+
+[33mcommit 9e0e7a922feabed62e48e318c3710de8e9ea91de[m
+Author: Med Ali Ezzeddine <47082236+xDaly@users.noreply.github.com>
+Date:   Tue May 28 10:46:32 2024 +0100
+
+    Add files via upload
+
+[33mcommit 4c1d61231ff585c7925d669a34af8e8804170a66[m
+Author: Med Ali Ezzeddine <47082236+xDaly@users.noreply.github.com>
+Date:   Tue May 28 09:04:25 2024 +0100
+
+    Update header.jsx
+
+[33mcommit 0b0ce9cfa79ef45d1788ee8b4ae9fe8ee12b02c5[m
+Author: Med Ali Ezzeddine <47082236+xDaly@users.noreply.github.com>
+Date:   Tue May 28 09:02:36 2024 +0100
+
+    Add files via upload
+
+[33mcommit a9c4ef718e4b7eefc3ba44953540d0e20e9732cc[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Thu May 16 21:14:21 2024 +0100
+
+    edit welcome page
+
+[33mcommit a6503bfb0a7c2aa76c0d0180b36302f24703006d[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Thu May 16 20:51:41 2024 +0100
+
+    edit login button mobile
+
+[33mcommit 93142a5251ef497401582fda727e8138a3aca439[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Thu May 16 20:35:47 2024 +0100
+
+     edit css main page and add carousel
+
+[33mcommit 61801e1e9e9f4af6125854c223a9e4c1b12e0c00[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 22:53:24 2024 +0100
+
+    edit package json
+
+[33mcommit 268da584a4692bc4e105a88cc574eb1666a3aac4[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 21:08:42 2024 +0100
+
+    df3
+
+[33mcommit abb20a5268374d91db68bb7f5711244f49e82cef[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 21:04:54 2024 +0100
+
+    df2
+
+[33mcommit bf49abe70b98542298de432f7c683ea9b0f14b8d[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 21:03:14 2024 +0100
+
+    df
+
+[33mcommit f35958587449cbd56b703912ce4b8355f10a3209[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 21:00:11 2024 +0100
+
+    edit pnpm env docker file
+
+[33mcommit 1dc1a0a6c221f5b06ee2b18e102b7654b68082f5[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 20:53:19 2024 +0100
+
+    add pnpm
+
+[33mcommit 8607e570a1a12252ba3b87b0addac9ddfe530445[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 20:47:38 2024 +0100
+
+    edit package json with docker file , merge with oussama safe branch
+
+[33mcommit 16e1325656cc3a31eea35dff830bf183a2a75a75[m
+Merge: 82fef6e 8c51f42
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 20:43:10 2024 +0100
+
+    Merge branch 'safe-vesion-for-date-picker' of https://github.com/xDaly/unow-front
+
+[33mcommit 8c51f424f8ecee8925ffb7a5bf9c9c2e502d9cec[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Mon Apr 29 20:37:04 2024 +0100
+
+    date changes
+
+[33mcommit 82fef6e260513f4c4d54f6753cd03afdb334e8d9[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 18:19:57 2024 +0100
+
+    edit trainers
+
+[33mcommit 5ead83f015325255266629cdaa5a874a8f8a79e9[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 00:03:28 2024 +0100
+
+    add get trainers
+
+[33mcommit a5b696d1e3467c5dc32a48ec13e107ecca304a6e[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 29 00:02:38 2024 +0100
+
+    add get trainers
+
+[33mcommit 3397c80d58e3061786b92ad7b496830629c76718[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 18:55:12 2024 +0100
+
+    update useData apis
+
+[33mcommit 736ab063deeb0ac66188517ff4fd97b5d97008e1[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 18:45:04 2024 +0100
+
+    course cycle ( load videos)
+
+[33mcommit 5f70894e1069c53bf767eec344ed8eb7cd0cb6f4[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 18:36:58 2024 +0100
+
+    add course
+
+[33mcommit c0d59d57bfcc874e6bd180a32bd4c35f925b6c3a[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 28 17:58:14 2024 +0100
+
+    CreateCourse add config
+
+[33mcommit 27e84f815282ab1abe28e678daab74138443ee50[m
+Merge: 50f9f18 0fa6c39
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 28 17:18:13 2024 +0100
+
+    Merge branch 'main' of https://github.com/xDaly/unow-front
+
+[33mcommit 50f9f183868927d57a9816ccbf7053f343b774fd[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 28 17:17:42 2024 +0100
+
+    date picker
+
+[33mcommit 0fa6c392a8a7d59c620874935c8a3914bfc33b01[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 16:12:43 2024 +0100
+
+    Update styles.module.css
+
+[33mcommit 7fbd83be63aca7eeea433da4d88c404204748b50[m
+Merge: e45b7b7 3630db7
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 28 16:10:04 2024 +0100
+
+    Merge branch 'main' of https://github.com/xDaly/unow-front
+
+[33mcommit 3630db7fa0ff6d61c55cfaed13acbad0f5604857[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 15:46:08 2024 +0100
+
+    Update trainer account / training  from admin  and / complete info for trainer
+
+[33mcommit e45b7b7f8c6ecbd60b86a3299761fa9ef4e53aee[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 28 14:29:40 2024 +0100
+
+    badges
+
+[33mcommit 1f5d57445b09f3a8a35023a4b9c4dc324bdd0663[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 13:11:16 2024 +0100
+
+    Update index.jsx
+
+[33mcommit 0432ddcfa99a927e6ae91466b94c26e59d014a75[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sun Apr 28 08:36:34 2024 +0100
+
+    admin updates
+
+[33mcommit 8a8ac24b10bb325d3ec1642774d1baa89d081dd9[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sat Apr 27 22:45:53 2024 +0100
+
+    edit img preview
+
+[33mcommit 14d8553246b868f9ff30abe414d22fa5b4eb9ab7[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sat Apr 27 21:16:31 2024 +0100
+
+    partners update
+
+[33mcommit addedbf69a05055299be57761bf2cfdd6113b8b1[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sat Apr 27 17:52:29 2024 +0100
+
+    room/training update
+
+[33mcommit 00788ee2976de6f268d24f7592725216433a130e[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sat Apr 27 17:01:22 2024 +0100
+
+    email verification
+
+[33mcommit 74dc2fb67e0f8a7cb28b1dc45eee6b95be77f77c[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sat Apr 27 10:29:09 2024 +0100
+
+    update image upload ui
+
+[33mcommit 5603c84e8531e98458206eed953da5ee6345ea24[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Sat Apr 27 10:21:56 2024 +0100
+
+    Image uploader / training creation correction
+
+[33mcommit 28f762af7d73041dbe3cf5e832d9970f8bbf00a8[m
+Author: “elayeboussama” <61306430+elayeboussama@users.noreply.github.com>
+Date:   Wed Apr 24 17:29:50 2024 +0100
+
+    update config 24/04/2024
+
+[33mcommit a562d0d4b0b0376bea477afe373d950c65140e54[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Wed Apr 24 00:59:28 2024 +0100
+
+    edit image in personalize
+
+[33mcommit 9dae36ee9dba22be34ab583b824c1f7e980a7622[m
+Author: Med Ali Ezzeddine <47082236+xDaly@users.noreply.github.com>
+Date:   Tue Apr 23 12:51:50 2024 +0100
+
+    Update index.jsx
+
+[33mcommit 4bd32c2ce05a05fb386e802a0c319f242be37990[m
+Author: Med Ali Ezzeddine <47082236+xDaly@users.noreply.github.com>
+Date:   Tue Apr 23 12:44:41 2024 +0100
+
+    Update index.jsx
+
+[33mcommit 056fcc443961effeaaf75d9af782b2b29ee99a9f[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 22 21:25:29 2024 +0100
+
+    edit headers
+
+[33mcommit f6f0378647267645b518f06771b1263587cf055c[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Mon Apr 22 20:15:38 2024 +0100
+
+    edit login conf
+
+[33mcommit a7a23feaa5d7d17b635fb3922428215dec2e7d17[m
+Author: Med Ali Ezzeddine <47082236+xDaly@users.noreply.github.com>
+Date:   Mon Apr 22 12:29:32 2024 +0100
+
+    Update index.jsx remove config from signup personalize
+
+[33mcommit 6b4557233225ef0c3fd24b83de0129dfc994b047[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 21 22:33:11 2024 +0100
+
+    remove package json
+
+[33mcommit ff93ae33817e7c1ae93498923b7770bbd124e844[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 21 22:12:48 2024 +0100
+
+    remove headers
+
+[33mcommit 07e193c06cc5f05a3ecbe0a6cb1a3eaa6b44d033[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 21 22:01:42 2024 +0100
+
+    remove config
+
+[33mcommit a1199e1a5e082b844398df6cbc0016471731d147[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 21 10:29:13 2024 +0100
+
+    edit axios conf
+
+[33mcommit a7906acd0f88a3b9e6d4631859ff0e9f5b0d0c42[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 21 01:31:50 2024 +0100
+
+    edit workflow
+
+[33mcommit d48dd10df578bf2d6b492fac7cea9328ce84548c[m
+Author: mohamed ali ezzeddine <mohamedaliezzeddine1@gmail.com>
+Date:   Sun Apr 21 01:29:59 2024 +0100
+
+    initial

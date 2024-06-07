@@ -601,16 +601,20 @@ const Main = () => {
     });
   const refHome = useRef(null);
   return (
-    <React.Fragment className={styles.body}>
-
+    <React.Fragment  className={styles.body}>
       <div className={styles.background}>
-      <Nav ref={refHome} />
-      <div className={styles.motivationImg}>
-        <div>
-        <div className={styles.textsearch}>Let's build the future together</div>
-        <div className={styles.textsearch}>“Coming together is a beginning, keeping together is progress,  working together is success.”  Henry Ford</div>
-        </div>
-        {/* <div className={styles.sectionTwo}> */}
+        <Nav ref={refHome} />
+        <div className={styles.motivationImg}>
+          <div>
+            <div className={styles.textsearchtitle}>
+              Let's build the future together
+            </div>
+            <div className={styles.textsearch}>
+              “Coming together is a beginning, keeping together is progress,
+              working together is success.” Henry Ford
+            </div>
+          </div>
+          {/* <div className={styles.sectionTwo}> */}
           <div className={styles.explore_container}>
             <button
               className={styles.explore_btn}
@@ -634,9 +638,9 @@ const Main = () => {
               <img src={loupe} alt="" />
             </button>
           </div>
-        {/* </div> */}
-       
-        {/* <section className={styles.sectionOne}>
+          {/* </div> */}
+
+          {/* <section className={styles.sectionOne}>
           <div className={styles.motivationDiv}>
             <div className={styles.motivationQuotes}>
               <h1>
@@ -650,137 +654,34 @@ const Main = () => {
             </div>
           </div>
         </section>*/}
- 
-      </div>
-      <Header />
-      </div>
-      <section className={styles.sectionThree}>
-        <h1>FEATURED PRODUCTS</h1>
-        <div className={styles.topTrainingElements}>
-          <motion.div
-            ref={carousel}
-            className={styles.carousel}
-            whileTap={{ cursor: "grabbing" }}
-          >
+        </div>
+        <Header />
+
+        <section  className={styles.sectionThree} >
+          <div className={styles.features}>FEATURED PRODUCTS
+
+          <p className={styles.underline}></p>
+          </div>
+         
+          <div className={styles.topTrainingElements}>
             <motion.div
-              drag="x"
-              dragConstraints={{ right: 0, left: -width }}
-              className={styles.inner_carousel}
+              ref={carousel}
+              className={styles.carousel}
+              whileTap={{ cursor: "grabbing" }}
             >
-              {topTrainingElements}
+              <motion.div
+                drag="x"
+                dragConstraints={{ right: 0, left: -width }}
+                className={styles.inner_carousel}
+              >
+                {topTrainingElements}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className={styles.sectionFour}>
-        <h1 style={{ textAlign: "center", color: "black" }}>CATEGORIES</h1>
-        <CategorySlider />
-      </section>
-      <section className={styles.sectionFivePrime}>
-        <div className={styles.sectionFivePrime_title}>
-          <h1>Our trainers</h1>
-        </div>
-        <div className={styles.OurTrainers}>
-          {trainers &&
-            trainers.slice(0, 3).map((trainer) => {
-              return (
-                <div className={styles.OurTrainers_element}>
-                  <div className={styles.OurTrainers_element_back}>
-                    <div className={styles.OurTrainers_element_txt}>
-                      <h1>{trainer.name}</h1>
-                      <h2>{trainer.description}</h2>
-                    </div>
-                  </div>
-                  <img
-                    style={{
-                      width: "100%",
-                      borderRadius: 15,
-                      height: 350,
-                      objectFit: "cover",
-                    }}
-                    src={`${process.env.REACT_APP_API}/${trainer.image.filePath}`}
-                    alt=""
-                  />
-                </div>
-              );
-            })}
-        </div>
-      </section>
-      <section className={styles.sectionSix}>
-        <h1>we collaborate with</h1>
-        <div className={styles.OurPartners}>
-          <div className={styles.OurPartners_container} style={{overflowX:'scroll'}}>
-            {/* <div>
-              <img src={Google} alt="" />
-            </div>
-            <div>
-              <img src={IBM} alt="" />
-            </div>
-            <div>
-              <img src={Cambridge} alt="" />
-            </div>
-            <div>
-              <img src={Oxford} alt="" />
-            </div>
-            <div>
-              <img src={Microsoft} alt="" />
-            </div> */}
-            <div>
-              <img src={Scrum} alt="" />
-            </div>
-            <div>
-              <img src={Peoplecert} alt="" />
-            </div>
-            <div>
-              <img src={Axelos} alt="" />
-            </div>
-            <div>
-              <img src={DevOps} alt="" />
-            </div>
-            <div>
-              <img src={Exin} alt="" />
-            </div>
-            <div>
-              <img src={PMI} alt="" />
-            </div>
-            <div>
-              <img src={SAFe} alt="" />
-            </div>
           </div>
-          {/* <Slider className={styles.Slider} {...settings}>
-            
-          </Slider> */}
-        </div>
-      </section>
-      <section className={styles.sectionFive}>
-        <div className={styles.consultant_txt}>
-          <div className={styles.consultant_txt_header}>
-            <h1 className={styles.consultant_txt_header_bloc}>
-              CONSULTANTS - TRAINERS,
-            </h1>
-            <h1 className={styles.consultant_txt_header_normal}>JOIN US!</h1>
-          </div>
-          <h2>
-            As part of our professional training activity, we are
-            <br />
-            constantly looking for new consultant trainers.
-          </h2>
-        </div>
-        <div className={styles.consultant_buttons}>
-          <button
-            onClick={() => {
-              setOpenApply(true);
-            }}
-            className={styles.ApplyButton}
-          >
-            Apply Now !
-          </button>
-        </div>
-      </section>
-
-      <Footer refHome={refHome} />
-      <ApplyTrainer openApply={openApply} setOpenApply={setOpenApply} />
+        </section>
+      
+      </div>
+    
     </React.Fragment>
   );
 };

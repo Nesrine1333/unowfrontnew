@@ -17,15 +17,52 @@
 }
 
 
-.carousel{
-  
-
-    /* position:relative;
-    display: flex;
-    justify-content: center;
-    align-items:flex-start; */
-    width:100%;
+.carousel {
+    width: 100%;
     padding: 5%;
-   
-    background-color:#3e467800;
-}
+    background-color: #3e467800;
+    position: relative;
+  }
+  
+  .customButtonGroup {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+padding-left: 3%;
+padding-right: 3%;
+
+  }
+  
+  .customButtonLeft,
+  .customButtonRight {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .customButtonImage {
+    width: 30px; /* Adjust size as needed */
+  }
+  
+  .customButtonLeft {
+    left: 10px;
+  }
+  
+  .customButtonRight {
+    right: 10px;
+  }
+  
+  .customButtonLeft:hover,
+  .customButtonRight:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  /*media*/
+@media (max-width: 737px){
+
+    
+  }

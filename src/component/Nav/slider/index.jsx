@@ -39,13 +39,13 @@ export default function SliderNav({ user, handleLogout }) {
       onKeyDown={toggleDrawer(false)}
       className={styles.slide}
     >
-      <div className={styles.logoslider}>
+      <div className={styles.logo}>
         U!NOW
         <ArrowLeftIcon
           onClick={() => {
             toggleDrawer(false);
           }}
-          sx={{ width: "50px", fontSize: 40, cursor: "pointer",color: "black" }}
+          sx={{ width: "50px", fontSize: 40, cursor: "pointer" }}
         />
       </div>
       <div className={styles.Links}>
@@ -107,17 +107,17 @@ export default function SliderNav({ user, handleLogout }) {
   return (
     <React.Fragment>
       <Button onClick={toggleDrawer(true)}>
-        {/* <MenuIcon sx={{ color: "white" }} /> */}
+        <MenuIcon sx={{ color: "#FFFFFF" }} />
       </Button>
       <SwipeableDrawer
         open={toggle}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
       >
-        {/* {list()} */}
+        {list()}
       </SwipeableDrawer>
       <Link to="/">
-        <p className={`${styles.logo}`}>U!NOW</p>
+      <img src="./images/home/logoblanc 1.png" alt=""   className={styles.logoimage}  />
         {/* <img
                 style={{ marginTop: "20px", width: "160px" }}
                 className={styles.LogoImg}

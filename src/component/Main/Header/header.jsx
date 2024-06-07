@@ -23,15 +23,26 @@ const responsive = {
 export const Header = () => {
   const images = [
     "/images/home/unw.jpeg"];
-  return (
-    <>
-    <div className={styles.carousel}>
-    <Carousel
+    const CustomButtonGroup = ({ next, previous }) => {
+      return (
+        <div className={styles.customButtonGroup}>
+          <button className={styles.customButtonLeft} onClick={previous}>
+            <img src="/images/carousel/left.png" alt="Previous" className={styles.customButtonImage} />
+          </button>
+          <button className={styles.customButtonRight} onClick={next}>
+            <img src="/images/carousel/right.png" alt="Next" className={styles.customButtonImage} />
+          </button>
+        </div>
+      );
+    };
+    
+    return (
+      <Carousel
       swipeable={true}
       draggable={true}
-  
       responsive={responsive}
-      ssr={false} // means to render carousel on server-side.
+      ssr={false}
+      arrows= {false}
       infinite={true}
       autoPlay={true}
       autoPlaySpeed={5000}
@@ -42,16 +53,17 @@ export const Header = () => {
       removeArrowOnDeviceType={["tablet", "mobile"]}
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
+      customButtonGroup={<CustomButtonGroup />}
     >
-      {images.map((i, index) => {
-        return (
-          <div key={index}>
-            <img src={i} alt="" srcset="" className={styles.header} />
-          </div>
-        );
-      })}
-    </Carousel>
-    </div>
-    </>
-  );
+      <div className={styles.carousel}>
+       
+          {images.map((i, index) => (
+            <div key={index}>
+              <img src={i} alt="" srcSet="" className={styles.header} />
+            </div>
+          ))}
+      
+      </div>
+      </Carousel>
+    );
 };

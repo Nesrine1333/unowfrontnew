@@ -51,558 +51,577 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import { Header } from "./Header/header";
 const Main = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  useEffect(() => {
-    console.log(user);
-  });
-  const [CatalogueState, setCatalogueState] = useState(
-    user?.personalized?.learningType === "trainings" ||
-      user?.personalized?.learningType === "both" ||
-      user === null
-      ? "Trainings"
-      : "Courses"
-  );
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    nextArrow: <Arrow />,
-    prevArrow: <Arrow />,
-  };
 
-  function Arrow(props) {
-    const { className, style, onClick } = props;
-    return <div />;
-  }
 
-  const token = localStorage.getItem("token");
 
-  const theme = createTheme({
-    palette: {
-      ochre: {
-        main: "#ffc516",
-      },
-    },
-  });
+  // const user = JSON.parse(localStorage.getItem("user"));
+  // useEffect(() => {
+  //   console.log(user);
+  // });
+  // const [CatalogueState, setCatalogueState] = useState(
+  //   user?.personalized?.learningType === "trainings" ||
+  //     user?.personalized?.learningType === "both" ||
+  //     user === null
+  //     ? "Trainings"
+  //     : "Courses"
+  // );
 
-  const TextRating = (value, avis) => {
-    return (
-      <ThemeProvider theme={theme}>
-        <Box
-          sx={{
-            width: 200,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <StarIcon color="ochre" style={{ opacity: 0.55 }} fontSize="small" />
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 2,
+  //   autoplay: true,
+  //   speed: 2000,
+  //   autoplaySpeed: 2000,
+  //   cssEase: "linear",
+  //   nextArrow: <Arrow />,
+  //   prevArrow: <Arrow />,
+  // };
 
-          <div className={styles.rating_text}>
-            <p>({value > 0 ? value : 0})</p>
-            <p>({avis})</p>
-          </div>
-        </Box>
-      </ThemeProvider>
-    );
-  };
+  // function Arrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return <div />;
+  // }
 
-  const TextRating2 = (value, avis) => {
-    return (
-      <Box
-        sx={{
-          width: 80,
-          display: "flex",
-          alignItems: "center",
-          ml: 1,
-        }}
-      >
-        <Rating
-          name="text-feedback"
-          value={value}
-          readOnly
-          precision={0.5}
-          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
-        />
-        <Box>
-          <p className={styles.MuiBox}>({avis} avis)</p>
-        </Box>
-      </Box>
-    );
-  };
+  // const token = localStorage.getItem("token");
 
-  var [CoursesList, setCoursesList] = useState([]);
-  var [TrainingsList, setTrainingsList] = useState([]);
-  const [trainers, setTrainers] = useState([]);
+  // const theme = createTheme({
+  //   palette: {
+  //     ochre: {
+  //       main: "#ffc516",
+  //     },
+  //   },
+  // });
 
-  const getTrainers = async () => {
-    const url = `${process.env.REACT_APP_API}/api/Trainer/trainers`;
-    axios.get(url).then((res) => {
-      setTrainers(res.data.trainers);
-    });
-  };
+  // const TextRating = (value, avis) => {
+  //   return (
+  //     <ThemeProvider theme={theme}>
+  //       <Box
+  //         sx={{
+  //           width: 200,
+  //           display: "flex",
+  //           alignItems: "center",
+  //         }}
+  //       >
+  //         <StarIcon color="ochre" style={{ opacity: 0.55 }} fontSize="small" />
 
-  useEffect(() => {
-    handleSubmit();
-    getTrainers();
-  }, []);
+  //         <div className={styles.rating_text}>
+  //           <p>({value > 0 ? value : 0})</p>
+  //           <p>({avis})</p>
+  //         </div>
+  //       </Box>
+  //     </ThemeProvider>
+  //   );
+  // };
 
-  const handleSubmit = async () => {
-    try {
-      const url = `${process.env.REACT_APP_API}/api/trainings`;
-      axios.post(url).then((res) => {
-        setTrainingsList(res.data.data);
-        localStorage.setItem("AllTrainingsList", JSON.stringify(res.data.data));
-      });
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-      }
-    }
-    try {
-      const url = `${process.env.REACT_APP_API}/api/courses`;
-      axios.post(url, {}).then((res) => {
-        setCoursesList(res.data.data);
-        localStorage.setItem("AllCoursesList", JSON.stringify(res.data.data));
-      });
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-      }
-    }
-  };
+  // const TextRating2 = (value, avis) => {
+  //   return (
+  //     <Box
+  //       sx={{
+  //         width: 80,
+  //         display: "flex",
+  //         alignItems: "center",
+  //         ml: 1,
+  //       }}
+  //     >
+  //       <Rating
+  //         name="text-feedback"
+  //         value={value}
+  //         readOnly
+  //         precision={0.5}
+  //         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+  //       />
+  //       <Box>
+  //         <p className={styles.MuiBox}>({avis} avis)</p>
+  //       </Box>
+  //     </Box>
+  //   );
+  // };
 
-  const [categorySelected, setCategorySelected] = useState("All Categories");
+  // var [CoursesList, setCoursesList] = useState([]);
+  // var [TrainingsList, setTrainingsList] = useState([]);
+  // const [trainers, setTrainers] = useState([]);
 
-  const ListCourses = CoursesList.map((element) => {
-    if (element.Category === categorySelected) {
-      return (
-        <Link
-          to={{ pathname: `/Course/${element._id}` }}
-          onClick={() => {
-            user &&
-              user.lastSeen &&
-              (user.lastSeen = [...user.lastSeen, element._id]);
-            localStorage.setItem("user", JSON.stringify(user));
-            window.scrollTo(0, 0);
-          }}
-        >
-          <div key={element._id} className={styles.Courses}>
-            <div className={styles.display}>
-              {element.Thumbnail ? (
-                <img
-                  src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              ) : (
-                <img
-                  src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              )}
+  // const getTrainers = async () => {
+  //   const url = `${process.env.REACT_APP_API}/api/Trainer/trainers`;
+  //   axios.get(url).then((res) => {
+  //     setTrainers(res.data.trainers);
+  //   });
+  // };
 
-              <div className={styles.ListCoursesInfoCourse}>
-                <p className={styles.ListCoursesCardCategory}>
-                  {element.Category}
-                </p>
-                <hr className={styles.ListCoursesCardCategoryHr} />
+  // useEffect(() => {
+  //   handleSubmit();
+  //   getTrainers();
+  // }, []);
 
-                <Typography className={styles.ListCoursesCardTitle} noWrap>
-                  {element.Title}
-                </Typography>
-                <hr className={styles.ListCoursesCardCenterHr} />
-                <p className={styles.ListCoursesCardLevel}>
-                  Level: <span>{element.Level}</span>
-                  {/* Level: <span>{element.Level}</span> */}
-                </p>
-              </div>
-            </div>
-            <div className={styles.ListCoursesFooter}>
-              <div className={styles.ListCoursesCardRating}>
-                {TextRating2(element.rating, element.evaluate.length)}
-                {/* {TextRating2(element.note,element.avis)} */}
-              </div>
-              <p className={styles.priceFooter}>{element.Price} TTC</p>
-              {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
-            </div>
-          </div>
-        </Link>
-      );
-    } else if (categorySelected === "All Categories") {
-      return (
-        <Link
-          to={{ pathname: `/Course/${element._id}` }}
-          onClick={() => {
-            user &&
-              user.lastSeen &&
-              (user.lastSeen = [...user.lastSeen, element._id]);
-            localStorage.setItem("user", JSON.stringify(user));
-            window.scrollTo(0, 0);
-          }}
-        >
-          <div key={element._id} className={styles.Courses}>
-            <div className={styles.display}>
-              {element.Thumbnail ? (
-                <img
-                  src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              ) : (
-                <img
-                  src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              )}
+  // const handleSubmit = async () => {
+  //   try {
+  //     const url = `${process.env.REACT_APP_API}/api/trainings`;
+  //     axios.post(url).then((res) => {
+  //       setTrainingsList(res.data.data);
+  //       localStorage.setItem("AllTrainingsList", JSON.stringify(res.data.data));
+  //     });
+  //   } catch (error) {
+  //     if (
+  //       error.response &&
+  //       error.response.status >= 400 &&
+  //       error.response.status <= 500
+  //     ) {
+  //     }
+  //   }
+  //   try {
+  //     const url = `${process.env.REACT_APP_API}/api/courses`;
+  //     axios.post(url, {}).then((res) => {
+  //       setCoursesList(res.data.data);
+  //       localStorage.setItem("AllCoursesList", JSON.stringify(res.data.data));
+  //     });
+  //   } catch (error) {
+  //     if (
+  //       error.response &&
+  //       error.response.status >= 400 &&
+  //       error.response.status <= 500
+  //     ) {
+  //     }
+  //   }
+  // };
 
-              <div className={styles.ListCoursesInfoCourse}>
-                <p className={styles.ListCoursesCardCategory}>
-                  {element.Category}
-                </p>
-                <hr className={styles.ListCoursesCardCategoryHr} />
+  // const [categorySelected, setCategorySelected] = useState("All Categories");
 
-                <Typography className={styles.ListCoursesCardTitle} noWrap>
-                  {element.Title}
-                </Typography>
-                <hr className={styles.ListCoursesCardCenterHr} />
-                <p className={styles.ListCoursesCardLevel}>
-                  Level: <span>{element.Level}</span>
-                  {/* Level: <span>{element.Level}</span> */}
-                </p>
-              </div>
-            </div>
-            <div className={styles.ListCoursesFooter}>
-              <div className={styles.ListCoursesCardRating}>
-                {TextRating2(element.rating, element.evaluate.length)}
-                {/* {TextRating2(element.note,element.avis)} */}
-              </div>
-              <p className={styles.priceFooter}>{element.Price} TTC</p>
-              {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
-            </div>
-          </div>
-        </Link>
-      );
-    }
-  });
+  // const ListCourses = CoursesList.map((element) => {
+  //   if (element.Category === categorySelected) {
+  //     return (
+  //       <Link
+  //         to={{ pathname: `/Course/${element._id}` }}
+  //         onClick={() => {
+  //           user &&
+  //             user.lastSeen &&
+  //             (user.lastSeen = [...user.lastSeen, element._id]);
+  //           localStorage.setItem("user", JSON.stringify(user));
+  //           window.scrollTo(0, 0);
+  //         }}
+  //       >
+  //         <div key={element._id} className={styles.Courses}>
+  //           <div className={styles.display}>
+  //             {element.Thumbnail ? (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             ) : (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             )}
 
-  const ListTrainings = TrainingsList.map((element) => {
-    if (element.Category === categorySelected) {
-      return (
-        <Link
-          to={{ pathname: `/Training/${element._id}` }}
-          onClick={() => {
-            user &&
-              user.lastSeen &&
-              (user.lastSeen = [...user.lastSeen, element._id]);
-            localStorage.setItem("user", JSON.stringify(user));
-            window.scrollTo(0, 0);
-          }}
-        >
-          <div key={element._id} className={styles.Courses}>
-            <div className={styles.display}>
-              {element.Thumbnail ? (
-                <img
-                  src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              ) : (
-                <img
-                  src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              )}
-              <div className={styles.ListCoursesInfoCourse}>
-                <p className={styles.ListCoursesCardCategory}>
-                  {element.Category}
-                </p>
-                <hr className={styles.ListCoursesCardCategoryHr} />
+  //             <div className={styles.ListCoursesInfoCourse}>
+  //               <p className={styles.ListCoursesCardCategory}>
+  //                 {element.Category}
+  //               </p>
+  //               <hr className={styles.ListCoursesCardCategoryHr} />
 
-                <Typography className={styles.ListCoursesCardTitle} noWrap>
-                  {element.Title}
-                </Typography>
-                <hr className={styles.ListCoursesCardCenterHr} />
-                <p className={styles.ListCoursesCardLevel}>
-                  Level: <span>{element.Level}</span>
-                  {/* Level: <span>{element.Level}</span> */}
-                </p>
-              </div>
-            </div>
-            <div className={styles.ListCoursesFooter}>
-              <div className={styles.ListCoursesCardRating}>
-                {TextRating2(element.rating, element.evaluate.length)}
+  //               <Typography className={styles.ListCoursesCardTitle} noWrap>
+  //                 {element.Title}
+  //               </Typography>
+  //               <hr className={styles.ListCoursesCardCenterHr} />
+  //               <p className={styles.ListCoursesCardLevel}>
+  //                 Level: <span>{element.Level}</span>
+  //                 {/* Level: <span>{element.Level}</span> */}
+  //               </p>
+  //             </div>
+  //           </div>
+  //           <div className={styles.ListCoursesFooter}>
+  //             <div className={styles.ListCoursesCardRating}>
+  //               {TextRating2(element.rating, element.evaluate.length)}
+  //               {/* {TextRating2(element.note,element.avis)} */}
+  //             </div>
+  //             <p className={styles.priceFooter}>{element.Price} TTC</p>
+  //             {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
+  //           </div>
+  //         </div>
+  //       </Link>
+  //     );
+  //   } else if (categorySelected === "All Categories") {
+  //     return (
+  //       <Link
+  //         to={{ pathname: `/Course/${element._id}` }}
+  //         onClick={() => {
+  //           user &&
+  //             user.lastSeen &&
+  //             (user.lastSeen = [...user.lastSeen, element._id]);
+  //           localStorage.setItem("user", JSON.stringify(user));
+  //           window.scrollTo(0, 0);
+  //         }}
+  //       >
+  //         <div key={element._id} className={styles.Courses}>
+  //           <div className={styles.display}>
+  //             {element.Thumbnail ? (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             ) : (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             )}
 
-                {/* {TextRating2(element.note,element.avis)} */}
-              </div>
-              <p className={styles.priceFooter}>{element.Price} TTC</p>
-              {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
-            </div>
-          </div>
-        </Link>
-      );
-    } else if (categorySelected === "All Categories") {
-      return (
-        <Link
-          to={{ pathname: `/Training/${element._id}` }}
-          onClick={() => {
-            user &&
-              user.lastSeen &&
-              (user.lastSeen = [...user.lastSeen, element._id]);
-            localStorage.setItem("user", JSON.stringify(user));
-            window.scrollTo(0, 0);
-          }}
-        >
-          <div key={element._id} className={styles.Courses}>
-            <div className={styles.display}>
-              {element.Thumbnail ? (
-                <img
-                  src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              ) : (
-                <img
-                  src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
-                  alt=""
-                  className={styles.imgCourse}
-                />
-              )}
-              <div className={styles.ListCoursesInfoCourse}>
-                <p className={styles.ListCoursesCardCategory}>
-                  {element.Category}
-                </p>
-                <hr className={styles.ListCoursesCardCategoryHr} />
+  //             <div className={styles.ListCoursesInfoCourse}>
+  //               <p className={styles.ListCoursesCardCategory}>
+  //                 {element.Category}
+  //               </p>
+  //               <hr className={styles.ListCoursesCardCategoryHr} />
 
-                <Typography className={styles.ListCoursesCardTitle} noWrap>
-                  {element.Title}
-                </Typography>
-                <hr className={styles.ListCoursesCardCenterHr} />
-                <p className={styles.ListCoursesCardLevel}>
-                  Level: <span>{element.Level}</span>
-                  {/* Level: <span>{element.Level}</span> */}
-                </p>
-              </div>
-            </div>
-            <div className={styles.ListCoursesFooter}>
-              <div className={styles.ListCoursesCardRating}>
-                {TextRating2(element.rating, element.evaluate.length)}
+  //               <Typography className={styles.ListCoursesCardTitle} noWrap>
+  //                 {element.Title}
+  //               </Typography>
+  //               <hr className={styles.ListCoursesCardCenterHr} />
+  //               <p className={styles.ListCoursesCardLevel}>
+  //                 Level: <span>{element.Level}</span>
+  //                 {/* Level: <span>{element.Level}</span> */}
+  //               </p>
+  //             </div>
+  //           </div>
+  //           <div className={styles.ListCoursesFooter}>
+  //             <div className={styles.ListCoursesCardRating}>
+  //               {TextRating2(element.rating, element.evaluate.length)}
+  //               {/* {TextRating2(element.note,element.avis)} */}
+  //             </div>
+  //             <p className={styles.priceFooter}>{element.Price} TTC</p>
+  //             {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
+  //           </div>
+  //         </div>
+  //       </Link>
+  //     );
+  //   }
+  // });
 
-                {/* {TextRating2(element.note,element.avis)} */}
-              </div>
-              <p className={styles.priceFooter}>{element.Price} TTC</p>
-              {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
-            </div>
-          </div>
-        </Link>
-      );
-    }
-  });
+  // const ListTrainings = TrainingsList.map((element) => {
+  //   if (element.Category === categorySelected) {
+  //     return (
+  //       <Link
+  //         to={{ pathname: `/Training/${element._id}` }}
+  //         onClick={() => {
+  //           user &&
+  //             user.lastSeen &&
+  //             (user.lastSeen = [...user.lastSeen, element._id]);
+  //           localStorage.setItem("user", JSON.stringify(user));
+  //           window.scrollTo(0, 0);
+  //         }}
+  //       >
+  //         <div key={element._id} className={styles.Courses}>
+  //           <div className={styles.display}>
+  //             {element.Thumbnail ? (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             ) : (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             )}
+  //             <div className={styles.ListCoursesInfoCourse}>
+  //               <p className={styles.ListCoursesCardCategory}>
+  //                 {element.Category}
+  //               </p>
+  //               <hr className={styles.ListCoursesCardCategoryHr} />
 
-  /*/////////////////////////////////////////////////////////////////////////////*/
-  /*/////////////////////////////////////////////////////////////////////////////*/
-  /*/////////////////////////////////////////////////////////////////////////////*/
-  /*/////////////////////////////////////////////////////////////////////////////*/
+  //               <Typography className={styles.ListCoursesCardTitle} noWrap>
+  //                 {element.Title}
+  //               </Typography>
+  //               <hr className={styles.ListCoursesCardCenterHr} />
+  //               <p className={styles.ListCoursesCardLevel}>
+  //                 Level: <span>{element.Level}</span>
+  //                 {/* Level: <span>{element.Level}</span> */}
+  //               </p>
+  //             </div>
+  //           </div>
+  //           <div className={styles.ListCoursesFooter}>
+  //             <div className={styles.ListCoursesCardRating}>
+  //               {TextRating2(element.rating, element.evaluate.length)}
 
-  const [categoriesFromBd, setCategoriesFromBd] = useState([]);
+  //               {/* {TextRating2(element.note,element.avis)} */}
+  //             </div>
+  //             <p className={styles.priceFooter}>{element.Price} TTC</p>
+  //             {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
+  //           </div>
+  //         </div>
+  //       </Link>
+  //     );
+  //   } else if (categorySelected === "All Categories") {
+  //     return (
+  //       <Link
+  //         to={{ pathname: `/Training/${element._id}` }}
+  //         onClick={() => {
+  //           user &&
+  //             user.lastSeen &&
+  //             (user.lastSeen = [...user.lastSeen, element._id]);
+  //           localStorage.setItem("user", JSON.stringify(user));
+  //           window.scrollTo(0, 0);
+  //         }}
+  //       >
+  //         <div key={element._id} className={styles.Courses}>
+  //           <div className={styles.display}>
+  //             {element.Thumbnail ? (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             ) : (
+  //               <img
+  //                 src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
+  //                 alt=""
+  //                 className={styles.imgCourse}
+  //               />
+  //             )}
+  //             <div className={styles.ListCoursesInfoCourse}>
+  //               <p className={styles.ListCoursesCardCategory}>
+  //                 {element.Category}
+  //               </p>
+  //               <hr className={styles.ListCoursesCardCategoryHr} />
 
-  const HandleCategories = async () => {
-    const config = {
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    };
-    await axios
-      .get(`${process.env.REACT_APP_API}/api/Category/getCategories`, config)
-      .then(async (res) => {
-        setCategoriesFromBd(res.data.data);
-      });
-  };
-  useEffect(async () => {
-    await HandleCategories();
-  }, []);
+  //               <Typography className={styles.ListCoursesCardTitle} noWrap>
+  //                 {element.Title}
+  //               </Typography>
+  //               <hr className={styles.ListCoursesCardCenterHr} />
+  //               <p className={styles.ListCoursesCardLevel}>
+  //                 Level: <span>{element.Level}</span>
+  //                 {/* Level: <span>{element.Level}</span> */}
+  //               </p>
+  //             </div>
+  //           </div>
+  //           <div className={styles.ListCoursesFooter}>
+  //             <div className={styles.ListCoursesCardRating}>
+  //               {TextRating2(element.rating, element.evaluate.length)}
 
-  /*/////////////////////////////////////////////////////////////////////////////*/
-  /*/////////////////////////////////////////////////////////////////////////////*/
-  /*/////////////////////////////////////////////////////////////////////////////*/
-  /*/////////////////////////////////////////////////////////////////////////////*/
+  //               {/* {TextRating2(element.note,element.avis)} */}
+  //             </div>
+  //             <p className={styles.priceFooter}>{element.Price} TTC</p>
+  //             {/* <p className={styles.priceFooter}>{element.price} $ HT</p> */}
+  //           </div>
+  //         </div>
+  //       </Link>
+  //     );
+  //   }
+  // });
 
-  const [openApply, setOpenApply] = useState(false);
+  // /*/////////////////////////////////////////////////////////////////////////////*/
+  // /*/////////////////////////////////////////////////////////////////////////////*/
+  // /*/////////////////////////////////////////////////////////////////////////////*/
+  // /*/////////////////////////////////////////////////////////////////////////////*/
 
-  const [width, setWidth] = useState(0);
+  // const [categoriesFromBd, setCategoriesFromBd] = useState([]);
 
-  const carousel = useRef();
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
+  // const HandleCategories = async () => {
+  //   const config = {
+  //     headers: {
+  //       authorization: `Bearer ${token}`,
+  //     },
+  //   };
+  //   await axios
+  //     .get(`${process.env.REACT_APP_API}/api/Category/getCategories`, config)
+  //     .then(async (res) => {
+  //       setCategoriesFromBd(res.data.data);
+  //     });
+  // };
+  // useEffect(async () => {
+  //   await HandleCategories();
+  // }, []);
 
-  const [WindowWidth, setWindowWidth] = useState(0);
-  const handleWidthChange = () => {
-    const currentWidth = window.innerWidth;
-    setWindowWidth(currentWidth);
-  };
+  // /*/////////////////////////////////////////////////////////////////////////////*/
+  // /*/////////////////////////////////////////////////////////////////////////////*/
+  // /*/////////////////////////////////////////////////////////////////////////////*/
+  // /*/////////////////////////////////////////////////////////////////////////////*/
 
-  useEffect(() => {
-    if (WindowWidth <= 756) {
-      setMobileView(true);
-    } else {
-      setMobileView(false);
-    }
+  // const [openApply, setOpenApply] = useState(false);
 
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  // const [width, setWidth] = useState(0);
 
-    handleWidthChange();
-    window.addEventListener("resize", handleWidthChange);
-    return () => {
-      window.removeEventListener("resize", handleWidthChange);
-    };
-  }, [, WindowWidth]);
-  const [mobileView, setMobileView] = useState(false);
+  // const carousel = useRef();
+  // useEffect(() => {
+  //   setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  // }, []);
 
-  useEffect(() => {}, [WindowWidth]);
+  // const [WindowWidth, setWindowWidth] = useState(0);
+  // const handleWidthChange = () => {
+  //   const currentWidth = window.innerWidth;
+  //   setWindowWidth(currentWidth);
+  // };
 
-  const topTrainingElements = TrainingsList.sort((a, b) =>
-    a.rating > b.rating ? 1 : b.rating > a.rating ? -1 : 0
-  )
-    .reverse()
-    .sort((a, b) => (a.rating > b.rating ? 1 : b.rating > a.rating ? -1 : 0))
-    .map((element, index) => {
-      return (
-        <Link
-          // to={
-          //   productType == "trainings"
-          //     ? { pathname: `/Training/${element._id}` }
-          //     : { pathname: `/Course/${element._id}` }
-          // }
+  // useEffect(() => {
+  //   if (WindowWidth <= 756) {
+  //     setMobileView(true);
+  //   } else {
+  //     setMobileView(false);
+  //   }
 
-          to={{ pathname: `/Training/${element._id}` }}
-          onClick={() => {
-            user &&
-              user.lastSeen &&
-              (user.lastSeen = [...user.lastSeen, element._id]);
-            localStorage.setItem("user", JSON.stringify(user));
-            window.scrollTo(0, 0);
-          }}
-        >
-          <motion.div className={styles.topTrainingElement}>
-            <div className={styles.card_footer_type}>Training</div>
-            {element.Thumbnail ? (
-              <CardMedia
-                component="img"
-                src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
-                alt=""
-                className={styles.imgTop}
-              />
-            ) : (
-              <CardMedia
-                component="img"
-                src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
-                alt=""
-                className={styles.imgTop}
-              />
-            )}
+  //   setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
 
-            <div className={styles.infoCourse}>
-              <div className={styles.card_header}>
-                <div
-                  style={{
-                    backgroundColor: categoriesFromBd?.filter(
-                      (cat) => cat?.Title == element?.Category
-                    )[0]?.color,
+  //   handleWidthChange();
+  //   window.addEventListener("resize", handleWidthChange);
+  //   return () => {
+  //     window.removeEventListener("resize", handleWidthChange);
+  //   };
+  // }, [, WindowWidth]);
+  // const [mobileView, setMobileView] = useState(false);
 
-                    // category.color,
-                  }}
-                  className={styles.category_tag}
-                >
-                  <p className={styles.category}>{element.Category}</p>
-                </div>
-                <Typography className={styles.card_price}>
-                  {element.Price} $
-                </Typography>
-              </div>
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                }}
-                className={styles.cardLevel}
-              >
-                {element.Level}
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                }}
-                onClick={() => {
-                  window.location = `/Course/${element._id}`;
-                }}
-                className={styles.cardTitle}
-                noWrap
-              >
-                {element.Title}
-              </Typography>
+  // useEffect(() => { }, [WindowWidth]);
 
-              <div className={styles.card_footer}>
-                {TextRating(element.rating, element.evaluate.length)}
+  // const topTrainingElements = TrainingsList.sort((a, b) =>
+  //   a.rating > b.rating ? 1 : b.rating > a.rating ? -1 : 0
+  // )
+  //   .reverse()
+  //   .sort((a, b) => (a.rating > b.rating ? 1 : b.rating > a.rating ? -1 : 0))
+  //   .map((element, index) => {
+  //     return (
+  //       <Link
+  //         // to={
+  //         //   productType == "trainings"
+  //         //     ? { pathname: `/Training/${element._id}` }
+  //         //     : { pathname: `/Course/${element._id}` }
+  //         // }
 
-                <div className={styles.card_footer_subscribers}>
-                  {/*<div className={styles.subscribers_container}>
-                  <div className={styles.user_avatar_subscribers}>
-                    <img src={avatar1} alt="" />
-                  </div>
-                  <div
-                    className={`${styles.user_avatar_subscribers} ${styles.z_effect}`}
-                  >
-                    <img  alt="" />
-                  </div>
-                  <div
-                    className={`${styles.user_avatar_subscribers} ${styles.z_effect2}`}
-                  >
-                    <img src={avatar3} alt="" />
-                  </div>
-                </div>*/}
-                  <AvatarGroup>
-                    <Avatar
-                      alt="user1"
-                      src={avatar1}
-                      sx={{ width: 10, height: 10 }}
-                    />
-                    <Avatar
-                      alt="user2"
-                      src={avatar2}
-                      sx={{ width: 10, height: 10 }}
-                    />
-                    <Avatar
-                      alt="user3"
-                      src={avatar3}
-                      sx={{ width: 10, height: 10 }}
-                    />
-                  </AvatarGroup>
-                  <p className={styles.subscribers_text}>3k+</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Link>
-      );
-    });
+  //         to={{ pathname: `/Training/${element._id}` }}
+  //         onClick={() => {
+  //           user &&
+  //             user.lastSeen &&
+  //             (user.lastSeen = [...user.lastSeen, element._id]);
+  //           localStorage.setItem("user", JSON.stringify(user));
+  //           window.scrollTo(0, 0);
+  //         }}
+  //       >
+  //         <motion.div className={styles.topTrainingElement}>
+  //           <div className={styles.card_footer_type}>Training</div>
+  //           {element.Thumbnail ? (
+  //             <CardMedia
+  //               component="img"
+  //               src={`${process.env.REACT_APP_API}/${element.Thumbnail.filePath}`}
+  //               alt=""
+  //               className={styles.imgTop}
+  //             />
+  //           ) : (
+  //             <CardMedia
+  //               component="img"
+  //               src={`${process.env.REACT_APP_API}/uploads/courseImg.png`}
+  //               alt=""
+  //               className={styles.imgTop}
+  //             />
+  //           )}
+
+  //           <div className={styles.infoCourse}>
+  //             <div className={styles.card_header}>
+  //               <div
+  //                 style={{
+  //                   backgroundColor: categoriesFromBd?.filter(
+  //                     (cat) => cat?.Title == element?.Category
+  //                   )[0]?.color,
+
+  //                   // category.color,
+  //                 }}
+  //                 className={styles.category_tag}
+  //               >
+  //                 <p className={styles.category}>{element.Category}</p>
+  //               </div>
+  //               <Typography className={styles.card_price}>
+  //                 {element.Price} $
+  //               </Typography>
+  //             </div>
+  //             <Typography
+  //               sx={{
+  //                 fontWeight: "bold",
+  //               }}
+  //               className={styles.cardLevel}
+  //             >
+  //               {element.Level}
+  //             </Typography>
+  //             <Typography
+  //               sx={{
+  //                 fontWeight: "bold",
+  //               }}
+  //               onClick={() => {
+  //                 window.location = `/Course/${element._id}`;
+  //               }}
+  //               className={styles.cardTitle}
+  //               noWrap
+  //             >
+  //               {element.Title}
+  //             </Typography>
+
+  //             <div className={styles.card_footer}>
+  //               {TextRating(element.rating, element.evaluate.length)}
+
+  //               <div className={styles.card_footer_subscribers}>
+  //                 {/*<div className={styles.subscribers_container}>
+  //                 <div className={styles.user_avatar_subscribers}>
+  //                   <img src={avatar1} alt="" />
+  //                 </div>
+  //                 <div
+  //                   className={`${styles.user_avatar_subscribers} ${styles.z_effect}`}
+  //                 >
+  //                   <img  alt="" />
+  //                 </div>
+  //                 <div
+  //                   className={`${styles.user_avatar_subscribers} ${styles.z_effect2}`}
+  //                 >
+  //                   <img src={avatar3} alt="" />
+  //                 </div>
+  //               </div>*/}
+  //                 <AvatarGroup>
+  //                   <Avatar
+  //                     alt="user1"
+  //                     src={avatar1}
+  //                     sx={{ width: 10, height: 10 }}
+  //                   />
+  //                   <Avatar
+  //                     alt="user2"
+  //                     src={avatar2}
+  //                     sx={{ width: 10, height: 10 }}
+  //                   />
+  //                   <Avatar
+  //                     alt="user3"
+  //                     src={avatar3}
+  //                     sx={{ width: 10, height: 10 }}
+  //                   />
+  //                 </AvatarGroup>
+  //                 <p className={styles.subscribers_text}>3k+</p>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </motion.div>
+  //       </Link>
+  //     );
+  //   });
+
+
+
+
   const refHome = useRef(null);
+
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    carouselRef.current.scrollBy({ left: -100, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    carouselRef.current.scrollBy({ left: 100, behavior: 'smooth' });
+  };
   return (
-    <React.Fragment  className={styles.body}>
-      <div className={styles.background}>
+    <React.Fragment className={styles.body}>
+      <div><img src="./images/home/background.png" alt=""   className={styles.imagebackground}  /></div>
+      <div className={styles.background} style={{ backgroundColor: 'background: #f9f9f9;' }}>
         <Nav ref={refHome} />
         <div className={styles.motivationImg}>
           <div>
@@ -619,7 +638,7 @@ const Main = () => {
             <button
               className={styles.explore_btn}
               type="button"
-              onClick={() => {}}
+              onClick={() => { }}
             >
               Explore
             </button>
@@ -633,7 +652,7 @@ const Main = () => {
             <button
               className={styles.search_btn}
               type="button"
-              onClick={() => {}}
+              onClick={() => { }}
             >
               <img src={loupe} alt="" />
             </button>
@@ -657,31 +676,89 @@ const Main = () => {
         </div>
         <Header />
 
-        <section  className={styles.sectionThree} >
-          <div className={styles.features}>FEATURED PRODUCTS
-
-          <p className={styles.underline}></p>
+        <section className={styles.sectionThree}>
+          <div className={styles.features}>
+            FEATURED PRODUCTS
+            <p className={styles.underline}></p>
           </div>
-         
           <div className={styles.topTrainingElements}>
-            <motion.div
-              ref={carousel}
-              className={styles.carousel}
-              whileTap={{ cursor: "grabbing" }}
+            <button
+              className={`${styles.arrowButton} ${styles.left}`}
+              onClick={scrollLeft}
             >
-              <motion.div
-                drag="x"
-                dragConstraints={{ right: 0, left: -width }}
-                className={styles.inner_carousel}
-              >
-                {topTrainingElements}
-              </motion.div>
-            </motion.div>
+            <img src="./images/home/left.png" alt="Description of the image" className={styles.imagefeatures} />
+            </button>
+            <div className={styles.carousel} ref={carouselRef}>
+              <div className={styles.inner_carousel}>
+                <img src="featuredproducts1.png" alt="Description of the image" className={styles.imagefeatures} />
+                <div className={styles.categorie}>
+                  <div className={styles.categorietype}>Web Development</div>
+                  <div className={styles.categoriprice}>1680 $</div>
+                </div>
+                <div className={styles.categoriniveau}>Intermediate</div>
+                <div className={styles.categoridomain}>React: Developing a Web Application</div>
+                <div className={styles.categorirating}> <div>
+
+                  <img src="star 4.png" alt="Description of the image" className={styles.arrow} />
+                  4.7 (750)
+                </div>
+
+                  <div>
+                    likes
+                  </div>
+                </div>
+              </div>
+              <div className={styles.inner_carousel}>
+                <img src="featuredproducts1.png" alt="Description of the image" className={styles.imagefeatures} />
+                <div className={styles.categorie}>
+                  <div className={styles.categorietype}>Web Development</div>
+                  <div className={styles.categoriprice}>1680 $</div>
+                </div>
+                <div className={styles.categoriniveau}>Intermediate</div>
+                <div className={styles.categoridomain}>React: Developing a Web Application</div>
+                <div className={styles.categorirating}> <div>
+
+                  <img src="star 4.png" alt="Description of the image" className={styles.arrow} />
+                  4.7 (750)
+                </div>
+
+                  <div>
+                    likes
+                  </div>
+                </div>
+              </div>
+              <div className={styles.inner_carousel}>
+                <img src="featuredproducts1.png" alt="Description of the image" className={styles.imagefeatures} />
+                <div className={styles.categorie}>
+                  <div className={styles.categorietype}>Web Development</div>
+                  <div className={styles.categoriprice}>1680 $</div>
+                </div>
+                <div className={styles.categoriniveau}>Intermediate</div>
+                <div className={styles.categoridomain}>React: Developing a Web Application</div>
+                <div className={styles.categorirating}> <div>
+
+                  <img src="star 4.png" alt="Description of the image" className={styles.arrow} />
+                  4.7 (750)
+                </div>
+
+                  <div>
+                    likes
+                  </div>
+                </div>
+              </div>
+              {/* Add more items as needed */}
+            </div>
+            <button
+              className={`${styles.arrowButton} ${styles.right}`}
+              onClick={scrollRight}
+            >
+               <img src="./images/home/right.png" alt="Description of the image" className={styles.arrow} />
+            </button>
           </div>
         </section>
-      
+
       </div>
-    
+
     </React.Fragment>
   );
 };

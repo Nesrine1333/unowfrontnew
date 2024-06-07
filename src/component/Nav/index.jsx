@@ -25,7 +25,7 @@ const Nav = () => {
   const [mobileView, setMobileView] = useState(false);
   useEffect(() => {
     //console.log(WindowWidth)
-    if (WindowWidth <= 756) {
+    if (WindowWidth <= 751) {
       setMobileView(true);
     } else {
       setMobileView(false);
@@ -33,7 +33,7 @@ const Nav = () => {
   }, []);
   useEffect(() => {
     console.log(WindowWidth);
-    if (WindowWidth <= 756) {
+    if (WindowWidth <= 751) {
       setMobileView(true);
     } else {
       setMobileView(false);
@@ -52,21 +52,23 @@ const Nav = () => {
   return (
     <React.Fragment>
       <nav className={styles.nav_container}>
-      
+      {!mobileView ? (
           <div className={styles.nav_web_container}>
             <Link to="/">
-              <p className={`${styles.logo}`}>U!NOW</p>
+            <img src="./images/home/logoblanc 1.png" alt=""   className={styles.logoimage}  />
               {/* <img
                 style={{ marginTop: "20px", width: "160px" }}
                 className={styles.LogoImg}
                 src={imgLogo}
               />{" "} */}
             </Link>
-            <div className={`${styles.middle_nav}`}>
+            <div className={styles.middle_nav}>
               <Link to="/">
-                <a type="button" className={styles.nav_btn}>
+                <a type="button" className={styles.nav_btn} style={{color: 'white'}}>
                   Home
+                
                 </a>
+                <p className={styles.underline}></p>
               </Link>
               <Link to="/about">
                 <a type="button" className={styles.nav_btn}>
@@ -165,7 +167,11 @@ const Nav = () => {
               </div>
             )}
           </div>
-      
+      ) : (
+        <React.Fragment>
+          <SliderNav user={user} handleLogout={handleLogout} />
+        </React.Fragment>
+      )}
       </nav>
     </React.Fragment>
   );

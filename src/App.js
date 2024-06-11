@@ -1,7 +1,7 @@
 import React from "react"
 
 import Main from "./component/Main"
-import Welcome from "./component/Welcome";
+//import Welcome from "./component/Welcome";
 import Personalize from "./component/Personalize";
 import Login from "./component/Login";
 import ResetPassword from "./component/ResetPassword";
@@ -22,6 +22,9 @@ import { Link, Route, Routes, Navigate } from "react-router-dom";
 import MissingRoute from "./secure/MissingRoute";
 
 import { LanguageProvider } from "./hooks/LanguageContext";
+//import Categories from "./component/Categories";
+//import Featured from "./component/Home/Featured Trainers";
+import HomeInterface from "./component/Home/HomeInterface";
 
 // import axios from "axios";
 // import React, { useEffect, useState } from "react";
@@ -38,7 +41,7 @@ function App() {
         <Routes>
           {!user && (
             <React.Fragment>
-              <Route exact path="/" element={<Welcome />} />
+              <Route exact path="/" element={<HomeInterface />} />
               <Route exact path="/Personalize" element={<Personalize />} />
             </React.Fragment>
           )}

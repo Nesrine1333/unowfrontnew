@@ -1,0 +1,128 @@
+.categorieContainer {
+  display: flex;
+  flex-direction: column;
+  /* padding: 1rem; */
+  padding-left: 85px;
+  padding-right: 85px;
+  background-color: aqua;
+  /* width: 100%; */
+}
+
+.categorieTitle {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.categorieTitle::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 6.2rem;
+  background-color: #cd6214;
+  margin-top: 0.4rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  flex-wrap: wrap; 
+  gap: calc(2vw + 20px);
+  /* flex-direction: row; */
+  align-self: center;
+   /* width: 1400px; */
+  background-color: blueviolet;
+   /* width:100%; */
+  margin-left: clamp(150px, 20vw, 148px) ;
+  margin-right: clamp(150px, 20vw, 148px);
+}
+
+.card {
+  /* background-color: rgb(247, 22, 22); */
+  width: clamp(150px, 20vw, 255px); /* Adjusts between 150px and 255px */
+  height: clamp(150px, 20vw, 255px);
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 1rem; */
+}
+
+.titleName {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cardImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/*media*/
+@media (max-width: 700px) {
+  .card {
+    width: 120px;
+    height: 120px;
+  }
+  .cardsContainer {
+    gap: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+  }
+  .cardImage {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+  .cardsContainer {
+    gap: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .titleName {
+    font-size: 5px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+  }
+  .cardImage {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+  .cardsContainer {
+    gap: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: aquamarine;
+  }
+  .titleName {
+    font-size: 5px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .categorieTitle {
+    margin-bottom: 2rem;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

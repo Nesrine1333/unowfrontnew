@@ -25,7 +25,7 @@ const Nav = () => {
   const [mobileView, setMobileView] = useState(false);
   useEffect(() => {
     //console.log(WindowWidth)
-    if (WindowWidth <= 751) {
+    if (WindowWidth <= 817) {
       setMobileView(true);
     } else {
       setMobileView(false);
@@ -33,7 +33,7 @@ const Nav = () => {
   }, []);
   useEffect(() => {
     console.log(WindowWidth);
-    if (WindowWidth <= 751) {
+    if (WindowWidth <= 817) {
       setMobileView(true);
     } else {
       setMobileView(false);

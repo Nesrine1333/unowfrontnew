@@ -603,13 +603,86 @@ const Main = () => {
   //       </Link>
   //     );
   //   });
+  const Datafeatures = [
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+    {
+      name: "Web Development",
+      prix:"1680 $",
+      description: "Intermediate",
+      image: "featuredproducts1.png",
+    },
+  ];
+  const [WindowWidth, setWindowWidth] = useState(0);
+  const handleWidthChange = () => {
+    const currentWidth = window.innerWidth;
+    setWindowWidth(currentWidth);
+  };
+
+  useEffect(() => {
+    handleWidthChange();
+    window.addEventListener("resize", handleWidthChange);
+    return () => {
+      window.removeEventListener("resize", handleWidthChange);
+    };
+  }, []);
+  const[itemsPerPage,setItemsPerPage] =useState(3);
 
 
-
+    
+  useEffect(() => {
+    //console.log(WindowWidth)
+    if (WindowWidth <= 817) {
+      setItemsPerPage(2);
+    } else {
+      setItemsPerPage(3);
+    }
+  }, [WindowWidth]);
 
   const refHome = useRef(null);
-
+  const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
+  const currentData = Datafeatures.slice(currentIndex, currentIndex + itemsPerPage);
 
   const scrollLeft = () => {
     carouselRef.current.scrollBy({ left: -100, behavior: 'smooth' });
@@ -624,7 +697,7 @@ const Main = () => {
       <div className={styles.background} style={{ backgroundColor: 'background: #f9f9f9;' }}>
         <Nav ref={refHome} />
         <div className={styles.motivationImg}>
-          <div>
+          <div className={styles.textcontainer}>
             <div className={styles.textsearchtitle}>
               Let's build the future together
             </div>
@@ -634,7 +707,9 @@ const Main = () => {
             </div>
           </div>
           {/* <div className={styles.sectionTwo}> */}
+    
           <div className={styles.explore_container}>
+            
             <button
               className={styles.explore_btn}
               type="button"
@@ -657,6 +732,7 @@ const Main = () => {
               <img src={loupe} alt="" />
             </button>
           </div>
+         
           {/* </div> */}
 
           {/* <section className={styles.sectionOne}>
@@ -688,50 +764,14 @@ const Main = () => {
             >
             <img src="./images/home/left.png" alt="Description of the image" className={styles.imagefeatures} />
             </button>
+            {currentData.map((e) => (
             <div className={styles.carousel} ref={carouselRef}>
+            
               <div className={styles.inner_carousel}>
                 <img src="featuredproducts1.png" alt="Description of the image" className={styles.imagefeatures} />
                 <div className={styles.categorie}>
-                  <div className={styles.categorietype}>Web Development</div>
-                  <div className={styles.categoriprice}>1680 $</div>
-                </div>
-                <div className={styles.categoriniveau}>Intermediate</div>
-                <div className={styles.categoridomain}>React: Developing a Web Application</div>
-                <div className={styles.categorirating}> <div>
-
-                  <img src="star 4.png" alt="Description of the image" className={styles.arrow} />
-                  4.7 (750)
-                </div>
-
-                  <div>
-                    likes
-                  </div>
-                </div>
-              </div>
-              <div className={styles.inner_carousel}>
-                <img src="featuredproducts1.png" alt="Description of the image" className={styles.imagefeatures} />
-                <div className={styles.categorie}>
-                  <div className={styles.categorietype}>Web Development</div>
-                  <div className={styles.categoriprice}>1680 $</div>
-                </div>
-                <div className={styles.categoriniveau}>Intermediate</div>
-                <div className={styles.categoridomain}>React: Developing a Web Application</div>
-                <div className={styles.categorirating}> <div>
-
-                  <img src="star 4.png" alt="Description of the image" className={styles.arrow} />
-                  4.7 (750)
-                </div>
-
-                  <div>
-                    likes
-                  </div>
-                </div>
-              </div>
-              <div className={styles.inner_carousel}>
-                <img src="featuredproducts1.png" alt="Description of the image" className={styles.imagefeatures} />
-                <div className={styles.categorie}>
-                  <div className={styles.categorietype}>Web Development</div>
-                  <div className={styles.categoriprice}>1680 $</div>
+                  <div className={styles.categorietype}>{e.description}</div>
+                  <div className={styles.categoriprice}>{e.prix}</div>
                 </div>
                 <div className={styles.categoriniveau}>Intermediate</div>
                 <div className={styles.categoridomain}>React: Developing a Web Application</div>
@@ -748,6 +788,7 @@ const Main = () => {
               </div>
               {/* Add more items as needed */}
             </div>
+            ))}
             <button
               className={`${styles.arrowButton} ${styles.right}`}
               onClick={scrollRight}
